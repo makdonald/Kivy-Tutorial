@@ -58,6 +58,7 @@ class MyGrid(GridLayout):
         self.email.text = ""
 
 
+# Alternative with my.kv file which hold styles, variables and trigger functions
 class MyGrid(Widget):
     first_name = ObjectProperty(None)
     last_name = ObjectProperty(None)

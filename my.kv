@@ -1,15 +1,15 @@
-<Button>:
-    font_size: 40
-    color: 0.3, 0.6, 0.7, 1
-    size_hint: 0.25, 0.5
+#<Button>:
+    #font_size: 10
+    #color: 0.3, 0.8, 0.7, 1
+    #size_hint: 0.3, 0.5
 
-<FloatLayout>:
-    Button:
-        pos_hint: {"x": 0.5,"top": 0.8,}
-        text: "Waldek"
+
+<Touch>:
+    button: btn
 
     Button:
         id: btn
-        pos_hint: {"x": 0.2, "top": 0.8,}
-        text: "Len smierdzacy" if btn.state == "normal" else "Pressed"
+        pos_hint: {"x": 0.35, "top": 1,}
+        text: "Happy Btn"
+
         
