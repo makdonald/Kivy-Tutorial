@@ -1,0 +1,39 @@
+<MyGrid>
+
+    fname: fname
+    lname: lname
+    email: email
+
+    GridLayout:
+        cols:1
+        size: root.width - 100, root.height - 100
+        pos: 50, 50
+
+        Label:
+            text: "USER"
+
+        GridLayout:
+            cols:2
+
+            Label:
+                text: "First Name"
+            TextInput:
+                fname
+                multiline: False
+
+            Label:
+                text: "Last Name"
+            TextInput:
+                lname
+                multiline: False
+            
+
+            Label:
+                email
+                text: "Email: "
+
+            TextInput:
+                multiline: False
+
+        Button:
+            text: "Submit"
