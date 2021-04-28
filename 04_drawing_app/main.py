@@ -20,13 +20,12 @@ class Touch(Widget):
         # we use canvas property which is in Widget class
         with self.canvas:
             Color(0,1,0,.5, mode="rgba")
-            Line(points=[0,0,100,100,100,200], width=10, dash_length=1)
+            Line(points=[0,0,100,100,100,200], width=10)
             Color(1,0,0,.5, mode="rgba")
             self.rect = Rectangle(pos=(0,0), size=(50,50))
 
     def on_touch_down(self, touch):
-        self.rect.pos = touch.pos
-        
+        self.rect.pos = touch.pos    
         print("Mouse Down", touch)
 
     def on_touch_move(self, touch):
