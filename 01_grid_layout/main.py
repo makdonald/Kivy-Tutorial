@@ -12,6 +12,16 @@ from kivy.uix.button import Button
 from kivy.properties import ObjectProperty
 from kivy.uix.widget import Widget
 
+#  create buttons and link/bind them to certain functions. 
+# When the button is pressed a function will trigger 
+# and we will grab information from the form
+
+# The kv design language allows for separation between design and logic. 
+# You can specify all of the widgets and elements in your application 
+# in one file and code the logic in your python script
+
+# object properties and continues to talk about the kivy .kv design language. 
+# Specifically mentioning how to reference objects from a .kv file in python code.
 
 # class to hold design elements
 class MyGrid(GridLayout):

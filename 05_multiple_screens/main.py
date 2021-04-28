@@ -9,9 +9,9 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 
-# This kivy tutorial covers navigating between multiple screens using a 
-# screenmanager in kivy. It will show you how to create multiple 
-# windows/screens and transition between them.
+# navigating between multiple screens using a screenmanager in kivy. 
+# It will show you how to create multiple windows/screens and 
+# transition between them.
 
 class MainWindow(Screen):
     pass

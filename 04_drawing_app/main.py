@@ -13,6 +13,9 @@ from kivy.graphics import Rectangle
 from kivy.graphics import Color
 from kivy.graphics import Line
 
+# create a simple drawing app and add objects to the screen using 
+# the kivy canvas. 
+
 class Touch(Widget):
     def __init__(self, **kwargs):
         super(Touch, self).__init__(**kwargs)

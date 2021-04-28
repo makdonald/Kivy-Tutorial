@@ -10,6 +10,9 @@ from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.widget import Widget
 
+# the float layout in kivy and how to dynamically place widgets 
+# that will resize appropriately for all screen sizes.
+
 class MyApp(App):
     def build(self):
         return FloatLayout()

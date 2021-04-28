@@ -10,6 +10,9 @@ from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.widget import Widget
 
+# getting user input such as touch input and input from the mouse. 
+# This way of getting input will work on all devices (phone, computer etc.)
+
 class MyApp(App):
     def build(self):
         return FloatLayout()
