@@ -1,7 +1,7 @@
 <MyGrid>
 
-    fname: fname
-    lname: lname
+    first_name: fname
+    last_name: lname
     email: email
 
     GridLayout:
@@ -18,18 +18,18 @@
             Label:
                 text: "First Name"
             TextInput:
-                fname
+                id: fname
                 multiline: False
 
             Label:
                 text: "Last Name"
             TextInput:
-                lname
+                id: lname
                 multiline: False
             
 
             Label:
-                email
+                id: email
                 text: "Email: "
 
             TextInput:
@@ -37,3 +37,4 @@
 
         Button:
             text: "Submit"
+            on_press: root.submit_btn()

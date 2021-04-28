@@ -12,6 +12,7 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.uix.widget import Widget
+from kivy.properties import ObjectProperty
 
 # class to hold design elements
 # class MyGrid(GridLayout):
@@ -59,7 +60,14 @@ from kivy.uix.widget import Widget
 
 
 class MyGrid(Widget):
-    pass
+    first_name = ObjectProperty(None)
+    last_name = ObjectProperty(None)
+    email = ObjectProperty(None)
+    
+    def submit_btn(self):
+        print("First Name: ", self.first_name.text)
+        self.first_name.text = ""
+
 
 class MyApp(App):
     def build(self):
