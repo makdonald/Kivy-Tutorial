@@ -6,31 +6,39 @@ os.environ['PATH'] += ';' + os.path.expandvars('%AppData%\\Python\\share\\glew\\
 os.environ['PATH'] += ';' + os.path.expandvars('%AppData%\\Python\\share\\sdl2\\bin')
 
 from kivy.app import App
-from kivy.lang import Builder
-from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.uix.widget import Widget
+from kivy.uix.popup import Popup
+from kivy.uix.floatlayout import FloatLayout
+#from.kivy.uix.label import Label
 
-# navigating between multiple screens using a screenmanager in kivy. 
-# It will show you how to create multiple windows/screens and 
-# transition between them.
+# create a popup window in kivy. Popup windows are very easy to create 
+# and have a large degree of customization. This tutorial will show you 
+# how to create and trigger a popup window.
 
-class MainWindow(Screen):
+class Widgets(Widget):
+    def btn(self):
+        show_popup()
+
+class P(FloatLayout):
     pass
 
-class SecondWindow(Screen):
-    pass
+# link .kv file with application
+#kv = Builder.load_file("my.kv")
 
-class WindowManager(ScreenManager):
-    pass
-
-# linke .kv file with application
-kv = Builder.load_file("my.kv")
-
-class MyMainApp(App):
+class MyApp(App):
     def build(self):
-        return kv
+        #return kv
+        return Widgets()
+
+def show_popup():
+    show = P()
+
+    popupWindow = Popup(title="Popup Window", content=show, size_hint=(None,None), size=(400,400))
+
+    popupWindow.open()
 
 if __name__== "__main__":
-    MyMainApp().run()
+    MyApp().run()
 
 
 
