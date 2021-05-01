@@ -26,6 +26,7 @@ from kivy.uix.widget import Widget
 # class to hold design elements
 class MyGrid(GridLayout):
     def __init__(self, **kwargs):
+        # i need to call the constractor from GridLayout class
         super(MyGrid, self).__init__(**kwargs)
         
         # external layout

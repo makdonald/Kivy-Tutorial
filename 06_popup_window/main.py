@@ -18,6 +18,7 @@ class Widgets(Widget):
     def btn(self):
         show_popup()
 
+# class with our content for show_popup function
 class P(FloatLayout):
     pass
 
