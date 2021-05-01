@@ -52,7 +52,7 @@ class LoginWindow(Screen):
 
     def loginBtn(self):
         if db.validate(self.email.text, self.password.text):
-            # set the current user in MainWindow(Screen)
+            # set the current user in MainWindow(Screen) -> user's data?
             MainWindow.current = self.email.text
             self.reset()
             # go to main window
@@ -78,11 +78,12 @@ class MainWindow(Screen):
     def logOut(self):
         sm.current = "login"
 
+    # on_enter -> event fired when the screen is displayed
     def on_enter(self, *args):
         password, username, created = db.get_user(self.current)
         self.n.text = "Account Name: " + username
         self.email.text = "Email: " + self.current
-        self.created.text = "Createdf On: " + created
+        self.created.text = "Created On: " + created
 
 # class used to manage Screens and moving things
 class WindowManager(ScreenManager):
