@@ -47,8 +47,8 @@ def update_pay(emp, pay):
     with conn:
         c.execute("""UPDATE employees
                     SET pay = :pay
-                    WHERE first = :first AND last = :last
-                """, {'first': emp.first, 'last': emp.last, 'pay': pay})
+                    WHERE first = :first AND last = :last""", 
+                    {'first': emp.first, 'last': emp.last, 'pay': pay})
 
 def remove_emp(emp):
     with conn:
@@ -60,6 +60,7 @@ def remove_emp(emp):
 emp1 = Employee('Donald', 'Trump', 15_000)
 emp2 = Employee('Vladimir', 'Putin', 20_000)
 emp3 = Employee('Angela', 'Merkel', 40_000)
+emp4 = Employee('Donald', 'Tusk', 45_000)
 
 # Insert values to the table (two ways) to avoid sql injections
 # c.execute("INSERT INTO employees VALUES (?, ?, ?)", (emp1.first, emp1.last, emp1.pay))
@@ -73,9 +74,12 @@ marko = get_emps_by_name('Marko')
 print(marko)
 
 update_pay(emp2, 25_000)
-print(emp2)
+print('emp2 updated', emp2)
 
 remove_emp(emp1)
 print('emp1: ', emp1)
+
+insert_emp(emp4)
+print(emp4)
 
 conn.close()
