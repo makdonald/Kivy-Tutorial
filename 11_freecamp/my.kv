@@ -1,4 +1,63 @@
-PageLayoutExample:
+WidgetsExample:
+
+<WidgetsExample@GridLayout>:
+    cols:3
+
+    ToggleButton:
+        text: 'OFF'
+        on_state: root.on_toggle_button_state(self)
+        size_hint: None, 1
+        width: "100dp"
+
+    Button:
+        text: 'Click here'
+        on_press: root.on_button_click()
+        disabled: not root.count_enabled
+
+    Label:
+        text: root.my_text
+        font_name: "fonts/Lcd.ttf"
+        font_size: "80dp"
+        color: 0,0.75,0,0.5
+
+    Switch:
+        id: my_switch
+        on_active: root.on_switch_active(self)
+        size_hint: None, 1
+        width: "100dp"
+        active: True
+
+    Slider:
+        id: my_slider
+        min: 0
+        max: 100
+        value: 50
+        orientation: 'vertical'
+        disabled: not my_switch.active
+        #on_value: root.on_slider_value(self)
+
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            #text: root.slider_value_text
+            text: str(int(my_slider.value))
+            font_name: "fonts/Lcd.ttf"
+            font_size: "50dp"
+            color: 1,0,0,0.7
+
+        ProgressBar:
+            max: 100
+            value: my_slider.value
+
+    TextInput:
+        id: my_text_input
+        size_hint: None, 1
+        width: "100dp"
+        text: "default text"
+        multiline: False
+        on_text_validate: root.on_text_validate(self)
+    Label:
+        text: root.my_text_input_str
 
 <PageLayoutExample@PageLayout>:
     MainWidget:

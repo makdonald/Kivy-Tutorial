@@ -16,11 +16,46 @@ from kivy.uix.stacklayout import StackLayout
 
 from kivy.uix.widget import Widget
 from kivy.uix.button import Button
-from kivy.lang import Builder
+from kivy.properties import StringProperty, BooleanProperty
+#from kivy.lang import Builder
+
 
 from kivy.metrics import dp
 
 #kv = Builder.load_file("stylesheet.kv")
+
+class WidgetsExample(GridLayout):
+    count = 1
+    count_enabled = BooleanProperty(False)
+    my_text = StringProperty('1')
+    my_text_input_str = StringProperty("Value")
+    #slider_value_text = StringProperty('50')
+   
+    def on_button_click(self):
+        if self.count_enabled == True:
+            print('button clicked')
+            self.count += 1
+            self.my_text = str(self.count)
+
+    def on_toggle_button_state(self, widget):
+        print('toggle state:',widget.state)
+        if widget.state == 'normal':
+            widget.text = 'OFF'
+            self.count_enabled = False
+        else:
+            widget.text = 'ON'
+            self.count_enabled = True
+
+    def on_switch_active(self, widget):
+        print("Switch:", widget.active)
+
+    # def on_slider_value(self, widget):
+    #     print("Slider value:", int(widget.value))
+        #self.slider_value_text = str(int(widget.value))
+
+    def on_text_validate(self, widget):
+        self.my_text_input_str = widget.text
+
 
 class StackLayoutExample(StackLayout):
     def __init__(self, **kwargs):
