@@ -1,0 +1,109 @@
+PageLayoutExample:
+
+<PageLayoutExample@PageLayout>:
+    MainWidget:
+    BoxLayoutExample:
+    AnchorLayoutExample:
+    GridLayoutExample:
+
+<ScrollViewExample@ScrollView>
+    StackLayoutExample:
+        size_hint: 1, None
+        height: self.minimum_height
+
+<StackLayoutExample>:
+    # left-right, top-bottom
+    #orientation: "rl-bt"
+    #padding: ("20dp", "40dp", "20dp", "40dp")
+    #spacing: "20dp", "20dp"
+
+    # Button:
+    #     text: "A"
+    #     size_hint: .2, .2
+    # Button:
+    #     text: "B"
+    #     size_hint: .2, .2
+    # Button:
+    #     text: "C"
+    #     size_hint: .2, .2
+    # Button:
+    #     text: "D"
+    #     size_hint: .2, .2
+    # Button:
+    #     text: "E"
+    #     size_hint: .2, .2
+    # Button:
+    #     text: "F"
+    #     size_hint: .2, .2
+
+
+<GridLayoutExample@GridLayout>:
+    # cols, rows
+    cols: 3
+    Button:
+        text: "A"
+        size_hint: None, 1
+        width: "60dp"
+    BoxLayoutExample:
+    Button:
+        text: "C"
+    Button:
+        text: "D"
+        size_hint: None, 1
+        width: "60dp"
+    Button:
+        text: "E"
+    Button:
+        text: "F"
+
+<AnchorLayoutExample>
+    # anchor_xy: 'center', 'bottom', 'top', 'right', 'left'
+    anchor_x: "center"
+    anchor_y: "bottom"
+    BoxLayout:
+        size_hint: .2, .2
+        Button:
+            text: "A"
+        Button:
+            text: "B"
+
+<BoxLayoutExample>:
+    # pos_hint: {'center_x:', 'right:', 'top:'}
+    orientation: "horizontal"
+    Button:
+        text: "A"
+        #size: "40dp", "40dp"
+        size_hint: .5, .5
+        #width: "100dp"
+        #height: "100dp"
+        #pos_hint: {"center_x":.5}
+        #pos_hint: {"x":.5}
+        #pos_hint: {"right":1}
+        pos_hint: {"center_y":.5}
+
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: "10dp"
+        Button:
+            text: "B1"
+        Button:
+            text: "B2"
+        Button:
+            text: "B3"
+        Button:
+            text: "B4"
+    Label:
+        text: "C"
+
+<MainWidget>:
+    Button:
+        text: "Hello"
+        size: "100dp", "88dp"
+        pos: "100dp", "200dp"
+        color: 0,0,1,1
+
+    Label:
+        text: "Hello2"
+        size: "100dp", "88dp"
+        pos: "200dp", "300dp"
+        color: 1,0,0,0.5
