@@ -1,4 +1,96 @@
-ImagesExample:
+CanvasExample5:
+
+#:set s dp(150)
+
+<CanvasExample7@BoxLayout>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 0,0,1,.6
+            Rectangle:
+                size: self.size
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 1,1,1,1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    RelativeLayout:
+        canvas:
+            Color:
+                rgba: 1,0,0,.6
+            Rectangle:
+                size: self.size
+                #pos: self.pos
+
+<CanvasExample6>
+    BoxLayout:
+        size: root.size # to canvas size full screen
+        Widget:
+            canvas:
+                Color:
+                    rgba:.3, .5, 0, .4
+                Rectangle:
+                    size: self.size # to Widget size half screen
+        RelativeLayout:
+        #Widget
+            canvas:
+                Color:
+                    rgba: 0, 1, 1, .4
+                Rectangle:
+                    size: self.size
+                    #pos: self.pos
+        Widget:
+            canvas:
+                Color:
+                    rgba: 0, 1, 1, .8
+                Rectangle:
+                    size: self.size
+                    pos: self.pos # will go to the position of parent Widget (0,0 by default)
+
+
+<CanvasExample4>:
+    Button:
+        pos: 100, 400
+        text: "A"
+        on_release: root.move_rect()
+
+<CanvasExample3@Widget>:
+    canvas:
+        Color:
+            rgba: 1, 0, 0, .3
+        Line:
+            circle: (200, 200, 100) # # center_x, center_y, radius
+            width: 2
+        Line:
+            ellipse: (500, 300, 100, 200) # center_x, center_y, radius_x, radius_y
+            width: 2
+        Color:
+            rgba: 1, 1, 0, .3
+        Line:
+            rectangle: (800, 100, 300, 200) # x, y, w, h
+            width: 2
+
+<CanvasExample2@Widget>:
+    canvas:
+        Line:
+            points: (0, self.height/2, self.width, self.height/2)
+        Line:
+            points: (self.width/2, 0, self.width/2, self.height)
+
+<CanvasExample1>:
+    canvas:
+        Rectangle:
+            pos: self.center_x-s/2, self.center_y-s/2
+            size: s, s
+        Ellipse:
+            pos: 100, 300
+            size: s, s/2
+        Line:
+            points: (0, 0, self.width/4, 100, self.width/2, 0, self.width*3/4, 100, self.width, 0)
+            width: 2
+
 
 <ImagesExample@GridLayout>:
     cols: 3
