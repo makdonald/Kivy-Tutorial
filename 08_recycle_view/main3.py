@@ -22,7 +22,7 @@ KV = """
     RecycleBoxLayout: 
         color:(0, 0.7, 0.4, 0.8) 
         default_size: None, dp(56) 
-        default_size_hint: 0.4, None
+        default_size_hint: 0.8, None
         size_hint_y: None
         height: self.minimum_height 
         orientation: 'vertical' # defines the orientation of data items

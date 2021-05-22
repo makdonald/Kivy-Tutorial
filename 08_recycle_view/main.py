@@ -12,7 +12,8 @@ class RV(RecycleView):
     def __init__(self):
         super().__init__()
         content = ['first button', 'second button', 'third button']
-        self.data = [{'text': item} for item in content]
+        content2 = [str(x) for x in range(1,30)]
+        self.data = [{'text': item} for item in content2]
 
 class MyApp(App):
     def build(self):
