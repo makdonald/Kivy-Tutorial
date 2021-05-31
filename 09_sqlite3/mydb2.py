@@ -174,7 +174,7 @@ for table in tables:
 
 #c.execute("UPDATE auctions SET name='Auction 3' WHERE id=3" )
 
-c.execute("""DELETE FROM statuses WHERE id=2""")
+#c.execute("""DELETE FROM statuses WHERE id=2""")
 
 def insert_customer(customer):
 
