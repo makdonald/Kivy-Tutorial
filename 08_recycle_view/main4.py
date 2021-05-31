@@ -28,6 +28,7 @@ class TextInputPopup(Popup):
         super(TextInputPopup, self).__init__(**kwargs)
         self.obj = obj
         self.obj_text = obj.text
+        print(self.obj, self.obj_text)
 
 
 class SelectableRecycleGridLayout(FocusBehavior, LayoutSelectionBehavior,
@@ -59,6 +60,7 @@ class SelectableButton(RecycleDataViewBehavior, Button):
 
     def on_press(self):
         popup = TextInputPopup(self)
+        print('on_press event', popup)
         popup.open()
 
     def update_changes(self, txt):
@@ -75,9 +77,9 @@ class RV(BoxLayout):
     def get_users(self):
 
         cursor.execute("CREATE TABLE IF NOT EXISTS Callbacks(cName TEXT, cID INT, cbTime INT, cbRems TEXT)")
-        cursor.execute("INSERT INTO Callbacks VALUES ('Client1','1','1500','Test1')")
-        cursor.execute("INSERT INTO Callbacks VALUES ('Client2','2','1600','Test2')")
-        cursor.execute("INSERT INTO Callbacks VALUES ('Client3','3','1700','Test3')")
+        # cursor.execute("INSERT INTO Callbacks VALUES ('Client1','1','1500','Test1')")
+        # cursor.execute("INSERT INTO Callbacks VALUES ('Client2','2','1600','Test2')")
+        # cursor.execute("INSERT INTO Callbacks VALUES ('Client3','3','1700','Test3')")
         connection.commit()
         cursor.execute("SELECT * FROM Callbacks ORDER BY ROWID DESC")
 

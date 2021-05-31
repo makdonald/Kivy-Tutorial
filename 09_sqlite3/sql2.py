@@ -54,4 +54,9 @@ remove_emp(emp_1)
 emps = get_emps_by_name('Doe')
 print(emps)
 
+print("**************")
+for x in c:
+    print(x)
+print("**************")
+
 conn.close()
