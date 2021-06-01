@@ -5,20 +5,23 @@ os.environ["CONDA_DLL_SEARCH_MODIFICATION_ENABLE"] = "1"
 import sqlite3
 from employee import Employee
 
-conn = sqlite3.connect(':memory:')
+# conn = sqlite3.connect(':memory:')
+conn = sqlite3.connect('sql2.db')
+
 
 c = conn.cursor()
 
-c.execute("""CREATE TABLE employees (
+c.execute("""CREATE TABLE IF NOT EXISTS employees (
             first text,
             last text,
-            pay integer
+            pay integer,
+            created TEXT
             )""")
 
 
 def insert_emp(emp):
     with conn:
-        c.execute("INSERT INTO employees VALUES (:first, :last, :pay)", {'first': emp.first, 'last': emp.last, 'pay': emp.pay})
+        c.execute("INSERT INTO employees VALUES (:first, :last, :pay, :created)", {'first': emp.first, 'last': emp.last, 'pay': emp.pay, 'created': emp.created})
 
 
 def get_emps_by_name(lastname):
@@ -42,21 +45,21 @@ emp_1 = Employee('John', 'Doe', 80000)
 emp_2 = Employee('Jane', 'Doe', 90000)
 
 insert_emp(emp_1)
-insert_emp(emp_2)
+# insert_emp(emp_2)
 
-emps = get_emps_by_name('Doe')
-print(emps)
+# emps = get_emps_by_name('Doe')
+# print(emps)
 
-update_pay(emp_2, 95000)
-print('emp2 payment updated', emp_2)
-remove_emp(emp_1)
+# update_pay(emp_2, 95000)
+# print('emp2 payment updated', emp_2)
+# remove_emp(emp_1)
 
-emps = get_emps_by_name('Doe')
-print(emps)
+# emps = get_emps_by_name('Doe')
+# print(emps)
 
-print("**************")
-for x in c:
-    print(x)
-print("**************")
+# print("**************")
+# for x in c:
+#     print(x)
+# print("**************")
 
-conn.close()
+# conn.close()
